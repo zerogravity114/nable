@@ -38,7 +38,7 @@ define nable::netinstall (
     "Extract $source_filename":
       path    => $path,
       command => "mkdir -p $destination_dir && cd $destination_dir && $extract_command $work_dir/$source_filename",
-      unless  => "find $destination_dir | grep $extracted_dir",
+      # unless  => "find $destination_dir | grep $extracted_dir",
       creates => "${destination_dir}/${extracted_dir}",
       require => Exec["Retrieve $url"],
   }
@@ -52,7 +52,7 @@ define nable::netinstall (
         subscribe   => Exec["Extract $source_filename"],
         refreshonly => true,
         timeout     => 3600,
-        require     => Exec["Retrieve $url"],
+        require     => Exec["Extract $source_filename"],
     }
   }
 }
