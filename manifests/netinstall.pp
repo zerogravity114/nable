@@ -26,7 +26,7 @@ define nable::netinstall (
   exec {
     "Retrieve $url":
       cwd     => "$work_dir",
-      command => "wget $url",
+      command => "/usr/bin/wget $url",
       creates => "$work_dir/$source_filename",
       timeout => 3600,
   }
