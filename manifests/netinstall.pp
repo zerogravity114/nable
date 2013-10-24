@@ -12,7 +12,7 @@ define nable::netinstall (
   $postextract_command = "",
 ) {
 
-  $source_filename = urlfilename($url)
+  $source_filename = url_parse($url,'filename')
 
   if $preextract_command {
     exec  {
