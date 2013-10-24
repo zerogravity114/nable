@@ -10,9 +10,9 @@ define nable::netinstall (
   $extract_command = "tar -zxvf",
   $preextract_command = "",
   $postextract_command = "",
+  $source_filename = "nagent-rhel5.1_64.tar.gz",
 ) {
 
-  $source_filename = url_parse($url,'filename')
 
   if $preextract_command {
     exec  {
