@@ -7,7 +7,7 @@ define nable::netinstall (
   $owner = "root",
   $group = "root",
   $work_dir = "/var/tmp",
-  $extract_command - "tar -zxvf",
+  $extract_command = "tar -zxvf",
   $preextract_command = "",
   $postextract_command = "",
 ) {
